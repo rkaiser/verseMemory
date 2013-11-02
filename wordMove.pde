@@ -1,5 +1,12 @@
+/////////////////////////////////////////////////////
+//Project Name: wordMove
+//Developer: Reid Kaiser
+//Purpose: Simple game to help kids memorize verses.
+//          Also a tool to help learn the processing language.
+/////////////////////////////////////////////////////
+
 PFont f;
-String[] arString = new String[3];
+//String[] arString = new String[3];
 float a,x,hr,vr;
 int numWords = 100;
 int position = 0;
@@ -177,12 +184,14 @@ void resetScreen() {
 
 //Highlights the next word.
 void help() {
-  for (int i=0; i<numWords; i++) {
+  if (staticWords[position] != null) {
+    for (int i=0; i<phraseWords.length; i++) {
       if (phraseWords[i].strWord.equals(staticWords[position].strWord)) {
         //If the words are equal then highlight it.
         phraseWords[i].cWord = color(200,155,155);
         break;
      }
+    }
   }
 }
 
